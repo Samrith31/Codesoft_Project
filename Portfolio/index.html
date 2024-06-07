@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website using HTML & CSS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Add CSS styling here */
+        .contact-section {
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .contact-item {
+            margin-bottom: 10px;
+        }
+        .contact-label {
+            font-weight: bold;
+        }
+        .contact-link {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body onload="document.body.style.opacity='1'">
+    <div class="hero">
+        <div class="nav">
+            <div class="logo">
+                <h2>Samrith Sanjoo.S</h2>
+            </div>
+            <div class="link">
+                <ul>
+                    <li><a href="#" class="active" onclick="showSection('about')">About</a></li>
+                    <li><a href="#" onclick="showSection('work')">Work</a></li>
+                    <li><a href="#" onclick="showSection('experience')">Experience</a></li>
+                    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main-content">
+            <div class="main" id="about">
+                <img src="img/myimage.jpeg" alt="men" class="men" style="border-radius: 20%;">
+                <div class="main-detil">
+                    <p>Hello I'm</p>
+                    <h1>Samrith Sanjoo.S</h1>
+                    <h4>Software Developer</h4>
+
+                    <div class="btn">
+                        <a href="resume.pdf" download="Samrith_Resume.pdf">
+                            <button type="button">Download CV</button>
+                        </a>
+                        <button type="button" class="btn-2" onclick="hireMe()">Hire Me</button>
+                    </div>
+
+                    <div class="social">
+                        <i class='bx bxl-github' onclick="redirectTo('https://github.com/Samrith31')"></i>
+                        <i class='bx bxl-twitter' onclick="redirectTo('https://twitter.com/samrith31')"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div id="work" style="display:none;">
+                <h1>My Work</h1><br> 
+                <h3>Woo (A Social Media Website)</h3><br> 
+                Woo is a twitter kind of social media website which is developed
+                using nodejs,express,mongodb. 
+                In this the user can post a woot,rewoot a woot,comment for a woot
+                and perfom all kinds of social media activities.<br>
+
+                <h3>Ticket Flick - (A Online Movie Ticket Booking Website)</h3><br> 
+                This is an online movie ticket booking website which is built using
+                HTML, CSS , JavaScript,PHP,SQL 
+                The user will be able to select the cities,movies,theatres,seats and
+                futher payment .<br>
+
+                <h3>Phonebook - (Android App) </h3><br> 
+                This is an Contact app kind of android app where the user can add a
+                person details,photo,save,edit,delete 
+                This uses databases in the android studio  .<br>
+
+
+
+            </div>
+            <div id="experience" style="display:none;">
+                <h2>My Experience</h2>
+                <br>
+                <h3>Throughout my academic journey, I've had the privilege of immersing myself in a multitude of projects, spanning from classroom assignments to collaborative initiatives outside of college walls. These experiences have not only deepened my understanding of software engineering principles but also honed my ability to adapt and innovate in diverse environments. Additionally, my participation in industrial visits has provided invaluable insights into real-world applications of technology, exposing me to industry best practices and fostering connections with professionals in the field. Each project, whether academic or extracurricular, has contributed to my growth as a software engineer, equipping me with the skills and confidence to tackle complex challenges and make meaningful contributions to the ever-evolving landscape of technology.</h3>
+            </div>
+            <div id="contact" style="display:none;">
+                <h2>Contact Me</h2>
+                <div class="contact-section">
+                    <div class="contact-item">
+                        <span class="contact-label">Name:</span> Samrith Sanjoo.S
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span> samrithsanjoo@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone:</span> Your 8197927209
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/samrith-sanjoo-76878b309/" class="contact-link">My LinkedIn Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">GitHub:</span> <a href="https://github.com/Samrith31" class="contact-link">MY GitHub Profile</a>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('#main-content > div');
+            sections.forEach(section => {
+                section.style.display = section.id === sectionId ? 'block' : 'none';
+            });
+
+            // Update the active link
+            const links = document.querySelectorAll('.nav .link a');
+            links.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('onclick').includes(sectionId));
+            });
+        }
+
+        function hireMe() {
+            // Redirect to a contact or hire me page
+            window.location.href = 'https://www.linkedin.com/in/samrith-sanjoo-76878b309/';
+        }
+
+        function redirectTo(url) {
+            window.open(url, '_blank');
+        }
+
+        // Set 'About' section as default visible section
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('about');
+        });
+    </script>
+
+    
+</body>
+</html>

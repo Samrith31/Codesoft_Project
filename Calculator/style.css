@@ -1,0 +1,37 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+.button{
+    width: 66px;
+    padding:20px;
+    margin:0 3px;
+    border:2px solid black;
+    border-radius:10px;
+    cursor: pointer;
+}
+
+
+
+.row{
+    margin:7px 0px;
+    
+}
+
+.row input{
+    margin:0;
+    font-size: 24px;
+    padding: 10px 0px;
+    border:2px solid black;
+    border-radius:5px;
+    
+}
+
+#color{
+    background: yellow;
+}
+
+#color1{
+    background: #9ab;
+}
